@@ -1,0 +1,32 @@
+
+{% block content %}
+<section class="container section hero">
+  <div class="hero__box hero__box--min-width">
+    <div class="hero__content">
+      <img class="hero__emblem" src="{{ site.link }}{{ eagle_emblemat_src }}" alt="Eagle emblemat">
+      <span class="hero__title hero__title--big hero__title--big hero__title--text-shadow">UPOLUJ</span>
+      <span class="hero__title hero__title--orange hero__title--top hero__title--big hero__title--text-shadow">STRONĘ</span>
+      <p class="hero__title hero__title--subtitle hero__title--uppercase hero__title--top">Profesjonalne strony na układach</p>
+    </div>
+    <div class="hero__social">
+      <span class="hero__title hero__title--small">Obserwuj nas</span>
+      <ul class="clean hero__icons">
+        {% for social in socials %}
+          <li class="hero__icon">
+            <a href="!#">
+              <img src="{{ social }}" alt="Social media profile"></img>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="hero__box hero__box--toleft">
+    <picture class="hero__eagle-image">
+      <source srcset="{{ site.link }}{{ eagle_src|towebp }}" type="image/webp">
+      <source srcset="{{ site.link }}{{ eagle_src|tojpg }}" type="image/jpeg">
+      <img src="{{ site.link }}{{ eagle_src|tojpg }}" alt="Eagle">
+    </picture>
+  </div>
+</section>
+{% endblock %}

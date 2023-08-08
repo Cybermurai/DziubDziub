@@ -1,0 +1,15 @@
+.nav{
+  display: none !important;
+  gap: 1rem;
+  background-color: #000;
+
+  &__list-item{
+    color:#FFF;
+    text-transform: uppercase;
+    cursor:pointer;
+
+    &:focus, &:active, &:hover{
+      color:#FFB940;
+    }
+  }
+}

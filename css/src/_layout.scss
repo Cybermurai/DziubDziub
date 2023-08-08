@@ -1,0 +1,28 @@
+html {
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  color: red;
+}
+
+.container{
+  display:flex;
+  padding-right:2rem;
+  padding-left:2rem;
+
+  @include breakpoint(medium){
+    padding-right:1rem;
+    padding-left:1rem;
+  }
+}

@@ -1,0 +1,154 @@
+.hero{
+  padding-bottom:5rem;
+  overflow: hidden;
+  background-color:black;
+
+  &__box{
+    &--toleft{
+      margin-left: -20vw;
+
+      @include breakpoint(large) {
+        margin-left: -11rem;
+      }
+
+      @include breakpoint(small) {
+        margin-left: -32vw;
+      }
+    }
+
+    &--min-width{
+      max-width:74%;
+    }
+  }
+
+  &__eagle-image{
+    position:relative;
+    z-index:2;
+
+    img{
+      width:59vw;
+
+      @include breakpoint(small){
+        width:100vw;
+      }
+    }
+  }
+
+  &__content{
+    padding-top: 5rem;
+    padding-left: 2rem;
+
+    @include breakpoint(small){
+      padding-top:4rem;
+    }
+  }
+
+  &__emblem{
+    position: relative;
+    top: -0.3vw;
+    left: 13.5vw;
+    z-index: 4;
+    width: 20vw;
+
+    @include breakpoint(medium) {
+      top:-0.4vw;
+      left:18vw;
+    }
+  }
+
+  &__title{
+    color:#FFF;
+
+    @include breakpoint(medium){
+      z-index:3
+    }
+
+    &--subtitle{
+      position: relative;
+      margin:0;
+      padding-left:1vw;
+      font-weight:600;
+      font-size:2vw;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #000;
+
+      @include breakpoint(small){
+        font-size:2.3vw;
+      }
+    }
+
+    &--orange{
+      color:#FFB940;
+    }
+
+    &--top{
+      z-index:3;
+    }
+
+    &--text-shadow{
+      text-shadow: 0 0 1rem #000;
+    }
+
+    &--big{
+      position: relative;
+      font-weight: 600;
+      font-size: 13vw;
+      line-height: 8vw;
+      letter-spacing: -10px;
+
+      @include breakpoint(medium) {
+        font-size: 16vw;
+        line-height: 10vw;
+      }
+    }
+
+    &--small{
+      font-size:1rem;
+      line-height:1;
+
+      @include breakpoint(small){
+        min-width:50%;
+        font-size:1rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__social{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    margin-top:3rem;
+    margin-left:2.6rem;
+    line-height: 1;
+  }
+
+  &__icons{
+    display: inline-grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 8fr 1fr 1fr;
+    gap:0.5rem;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+
+    &::before{
+      display: inline-block;
+      width: 84%;
+      height: 1px;
+      margin-left: 1rem;
+      background-color: #FFF;
+      content: '';
+
+      @include breakpoint(small){
+        width: 60%;
+      }
+    }
+  }
+
+  &__icon{
+    width:1.2rem;
+    margin-top:2px;
+  }
+}

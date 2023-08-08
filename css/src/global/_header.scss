@@ -1,0 +1,22 @@
+.header{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height:5rem;
+  padding-top:2rem;
+  background-color: #000;
+
+  @include breakpoint(small){
+    height:4rem;
+    padding-top:0;
+  }
+
+}
+
+.logo{
+  width:5rem;
+
+  @include breakpoint(small){
+    width:4rem;
+  }
+}

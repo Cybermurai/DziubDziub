@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-359.407,-931.402)">
+        <g transform="matrix(1,0,0,1,0,-21)">
+            <g id="Instagram" transform="matrix(1,0,0,1,-5.2821,10.4529)">
+                <g transform="matrix(0.0507813,0,0,0.0507812,364.69,941.949)">
+                    <path d="M437,0L75,0C33.648,0 0,33.648 0,75L0,437C0,478.352 33.648,512 75,512L437,512C478.352,512 512,478.352 512,437L512,75C512,33.648 478.352,0 437,0ZM257,390C182.559,390 122,329.441 122,255C122,180.559 182.559,120 257,120C331.441,120 392,180.559 392,255C392,329.441 331.441,390 257,390ZM407,150C382.188,150 362,129.813 362,105C362,80.188 382.188,60 407,60C431.813,60 452,80.188 452,105C452,129.813 431.813,150 407,150Z" style="fill:white;fill-rule:nonzero;"/>
+                </g>
+                <g transform="matrix(0.0507813,0,0,0.0507812,364.69,941.949)">
+                    <path d="M407,90C398.723,90 392,96.723 392,105C392,113.277 398.723,120 407,120C415.277,120 422,113.277 422,105C422,96.723 415.277,90 407,90Z" style="fill:white;fill-rule:nonzero;"/>
+                </g>
+                <g transform="matrix(0.0507813,0,0,0.0507812,364.69,941.949)">
+                    <path d="M257,150C199.109,150 152,197.109 152,255C152,312.891 199.109,360 257,360C314.891,360 362,312.891 362,255C362,197.109 314.891,150 257,150Z" style="fill:white;fill-rule:nonzero;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

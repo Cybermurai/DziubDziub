@@ -1,7 +1,7 @@
 {
-  "name": "dziub",
+  "name": "DziubDziub",
   "version": "1.0.0",
-  "description": "Dziub dziub",
+  "description": "Theme wordpress with Webpack, SCSS and Timber",
   "main": "js/build/main.js",
   "scripts": {
     "build": "webpack --mode development",

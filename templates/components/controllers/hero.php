@@ -1,10 +1,11 @@
 <?php
+use Timber\Timber;
 class HeroComponent{
   function __construct(){
     $context = Timber::context();
     $context['title'] = "Hero component";
 
-    $img_path = '/wp-content/themes/dziub/img/';
+    $img_path = '/wp-content/themes/dziubdziub/img/';
 
     $context['eagle_src'] = $img_path."components/hero/hero_eagle.png";
     $context['eagle_emblemat_src'] = $img_path."components/hero/hero_title-eagle.svg";

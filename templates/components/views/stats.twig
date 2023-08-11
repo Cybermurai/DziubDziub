@@ -1,6 +1,18 @@
 
 {% block content %}
 <section class="container stats">
-  <h1 class="big-title">{{title}}</h1>
+  <div class="stats__header">
+    <div class="stats__title">
+      <img class="hero__emblem" src="{{ site.link }}{{ eagle_emblemat_src }}" alt="Eagle emblemat">
+      <span>Co nadziabane</span>
+      <span>To nasze</span>
+    </div>
+    <div class="stats__information">
+      <span>*Podczas tworzenia tej strony nie ucierpiał żaden orzeł ani robak</span>
+    </div>
+  </div>
+  <div class="stats__content">
+     content
+  </div>
 </section>
 {% endblock %}

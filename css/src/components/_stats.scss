@@ -1,34 +1,95 @@
-/* stylelint-disable no-descending-specificity */
 .stats{
   background-color:#000;
 
   &__header{
     display:flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width:100%;
-    border-top:1px solid red;
+
+    @include breakpoint(small){
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__emblem{
+    position: relative;
+    top:2.1vw;
+    right:-13.5vw;
+    width:10vw;
+    margin-top: -2vw;
+
+    @include breakpoint(small){
+      top: 4.9vw;
+      right: -29.7vw;
+      width:16vw;
+    }
   }
 
   &__title{
+    display:flex;
+    flex-direction:column;
     color:#FFF;
+    font-weight:bold;
+    line-height:1;
+    text-transform: uppercase;
 
     span{
       display:block;
     }
 
-    span:first-child{
-      font-size:5vw;
+    span:nth-child(2){
+      font-size:1.2vw;
+
+      @include breakpoint(small){
+        font-size:3vw;
+      }
     }
 
     span:last-child{
-      font-size:8vw;
+      color:#FFB940;
+      font-size:4vw;
+
+      @include breakpoint(small){
+        font-size:8vw;
+      }
     }
   }
 
   &__information{
     span{
-      color:#FFF;
+      color:#9d9d9d;
+      font-size:0.8rem;
+
+      @include breakpoint(small){
+        font-size:2.2vw;
+      }
     }
+  }
+
+  &__content{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top:2rem;
+    text-align:center;
+    border:1px solid red;
+
+    @include breakpoint(medium){
+      grid-template-rows: 2fr;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(small){
+      grid-template-rows: 4fr;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item{
+    min-height:150px;
+    border:1px solid green;
   }
 }

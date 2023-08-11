@@ -1,7 +1,11 @@
 .hero{
   padding-bottom:5rem;
   overflow: hidden;
-  background-color:black;
+  background: #000;
+
+  @include breakpoint(small){
+    padding-bottom:0;
+  }
 
   &__box{
     &--toleft{
@@ -27,6 +31,7 @@
 
     img{
       width:59vw;
+      transition:0.1s;
 
       @include breakpoint(small){
         width:100vw;
@@ -105,11 +110,14 @@
     &--small{
       font-size:1rem;
       line-height:1;
+      text-transform: uppercase;
+
+      @include breakpoint(medium){
+        font-size:1rem;
+      }
 
       @include breakpoint(small){
-        min-width:50%;
         font-size:1rem;
-        text-transform: uppercase;
       }
     }
   }
@@ -119,15 +127,20 @@
     z-index: 5;
     display: flex;
     align-items: center;
+    max-width: 24rem;
     margin-top:3rem;
-    margin-left:2.6rem;
+    margin-left:1rem;
     line-height: 1;
+
+    @include breakpoint(small){
+      margin-left:0.5rem;
+    }
   }
 
   &__icons{
     display: inline-grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 8fr 1fr 1fr;
+    grid-template-columns: 8fr 2fr 2fr;
     gap:0.5rem;
     align-items: center;
     justify-content: center;
@@ -135,15 +148,11 @@
 
     &::before{
       display: inline-block;
-      width: 84%;
+      width: 97%;
       height: 1px;
-      margin-left: 1rem;
+      margin-left:5%;
       background-color: #FFF;
       content: '';
-
-      @include breakpoint(small){
-        width: 60%;
-      }
     }
   }
 

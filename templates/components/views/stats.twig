@@ -1,9 +1,9 @@
 
 {% block content %}
-<section class="container stats">
+<section class="container container--column stats">
   <div class="stats__header">
     <div class="stats__title">
-      <img class="hero__emblem" src="{{ site.link }}{{ eagle_emblemat_src }}" alt="Eagle emblemat">
+      <img class="stats__emblem" src="{{ site.link }}{{ title_emblemat_src }}" alt="Eagle emblemat">
       <span>Co nadziabane</span>
       <span>To nasze</span>
     </div>
@@ -12,7 +12,19 @@
     </div>
   </div>
   <div class="stats__content">
-     content
+    <div class="stats__item">
+      <div class="stats__item-background">
+        <img src=#!"" alt="">
+      </div>
+      <div class="stats__item-content">
+        <span>Znieśliśmy</span>
+        <span>50 000</span>
+        <span>Linii kodu</span>
+      </div>
+    </div>
+    <div class="stats__item">1</div>
+    <div class="stats__item">1</div>
+    <div class="stats__item">1</div>
   </div>
 </section>
 {% endblock %}

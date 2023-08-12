@@ -3,12 +3,12 @@
 <section class="container section hero">
   <div class="hero__box hero__box--min-width">
     <div class="hero__content">
-      <img class="hero__emblem" src="{{ site.link }}{{ eagle_emblemat_src }}" alt="Eagle emblemat">
-      <span class="hero__title hero__title--big hero__title--big hero__title--text-shadow">UPOLUJ</span>
-      <span class="hero__title hero__title--orange hero__title--top hero__title--big hero__title--text-shadow">STRONĘ</span>
-      <p class="hero__title hero__title--subtitle hero__title--uppercase hero__title--top">Profesjonalne strony na układach</p>
+      <img class="hero__emblem" src="{{ site.link }}{{ eagle_emblem_src }}" alt="Eagle emblemat">
+      <span class="hero__title hero__title--big hero__title--big hero__title--text-shadow">{{ __('UPOLUJ', 'DziubDziub') }}</span>
+      <span class="hero__title hero__title--orange hero__title--top hero__title--big hero__title--text-shadow">{{ __('STRONĘ', 'DziubDziub') }}</span>
+      <p class="hero__title hero__title--subtitle hero__title--uppercase hero__title--top">{{ __('Profesjonalne strony na układach', 'DziubDziub') }}</p>
         <div class="hero__social">
-          <span class="hero__title hero__title--small">Obserwuj nas</span>
+          <span class="hero__title hero__title--small">{{ __('Obserwuj nas', 'DziubDziub') }}</span>
             <ul class="clean hero__icons">
               {% for social in socials %}
                 <li class="hero__icon">

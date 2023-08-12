@@ -1,0 +1,106 @@
+/* stylelint-disable indentation */
+@use 'sass:math';
+
+// set media queries list in abstracts/media-queries.scss
+// set container padding and container max-width in abstracts/other-variables.scss and base/root.scss
+
+%container {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: var(--container-padding);
+    padding-left: var(--container-padding);
+}
+
+.container {
+    @extend %container;
+
+    max-width: var(--container-max-width);
+
+    &--small {
+        max-width: 116rem;
+    }
+}
+
+.container-fluid {
+    @extend %container;
+}
+
+// grid settings
+// set number of columns in the row
+$grid-columns: 12;
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// set size of column padding and row left and right margins
+$grid-gap: (
+    '0': 0,
+    '1': 1.5rem,
+    '2': 2rem,
+);
+
+@each $key, $val in $grid-gap {
+    .row--gap-#{$key} > * {
+        padding-right: $val;
+        padding-left: $val;
+    }
+
+    .row--gap-#{$key} {
+        margin-right: -$val;
+        margin-left: -$val;
+    }
+}
+
+// here we set how column will justify inside row
+$columns-layouts: flex-start, flex-end, center, space-between, space-around;
+
+@each $val in $columns-layouts {
+    .row--justify-#{$val} {
+        justify-content: $val;
+    }
+}
+
+// Create columns classes
+// generic col-5 works on all screen widths from 0px
+// col-md-6 works from md size set in media-query map
+@each $key, $val in $mq-breakpoints {
+    @include min(#{$val}) {
+        @for $i from 1 through $grid-columns {
+            @if $key == xxs {
+                .col-#{$i} {
+                    flex-grow: 0;
+                    box-sizing: border-box;
+                    width: math.div($i * 100%, $grid-columns);
+                }
+            } @else {
+                .col-#{$key}-#{$i} {
+                    flex-grow: 0;
+                    box-sizing: border-box;
+                    width: math.div($i * 100%, $grid-columns);
+                }
+            }
+        }
+    }
+}
+
+// Create offset column classes, which adds margin-left to this column
+// used when you need to move column like 2 columns to the right
+// use it like this offset-md-2 -> this will add margin left of the size of 2 columns from md screen size set in media-query map
+@each $key, $val in $mq-breakpoints {
+    @include min(#{$val}) {
+        @for $i from 1 through $grid-columns - 1 {
+            @if $key == xxs {
+                .offset-#{$i} {
+                    margin-left: math.div($i * 100%, $grid-columns);
+                }
+            } @else {
+                .offset-#{$key}-#{$i} {
+                    margin-left: math.div($i * 100%, $grid-columns);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@use 'sass:map';
+
+$mq-breakpoints: (
+  xxs: 0,
+  xs: 360px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1440px,
+  fhd: 1920px,
+);
+
+
+@mixin min($key) {
+  $size: map.get($mq-breakpoints, $key);
+
+  @if $size {
+    @media only screen and (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $key) {
+      @content;
+    }
+  }
+}
+
+@mixin max($key) {
+  $size: map.get($mq-breakpoints, $key);
+
+  @if $size {
+    @media only screen and (max-width: $size-1) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $key) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@use 'sass:map';
+@use 'sass:color';
+
+$colors: (
+  white: #fefefe,
+  black: #080808,
+  gray100: #262320,
+  gray80: #484441,
+  gray60: #676360,
+  gray40: #7b7874,
+  gray10: #a5a19d,
+  gray05: #c4bfbb,
+  gray0: #e7e7e7,
+  gray: #eaeaea,
+  table-gray: #f8f8f8,
+  gray-custom: #f8f8f8,
+  white100: #fff,
+  white72: rgb(255 255 255 / 72%),
+  white40: rgb(255 255 255 / 40%),
+  white12: rgb(255 255 255 / 12%),
+  primary100: #FFB940,
+  primary50: #f7bf06,
+  primary20: #f8c827,
+  primary10: #f9d34e,
+  primary05: #fadf81,
+  primary0: #fcebb3,
+  secondary100: #6f00c6,
+  secondary50: #8500cc,
+  secondary20: #c764e6,
+  secondary10: #d893ed,
+  secondary05: #e7bef3,
+  secondary0: #f6e5fa,
+  success100: #116942,
+  success50: #1ba769,
+  success05: #def2e9,
+  warning100: #a64f21,
+  warning50: #e86825,
+  warning05: #ffe1be,
+  alert100: #9f1b1f,
+  alert50: #de1c22,
+  alert05: #ffe0e1,
+);
+$variations: (
+  lighten: 5%,
+  darken: -25%,
+  alpha: -0.4,
+);
+
+@function vlist($c-map, $v-map) {
+  $baselist: ();
+
+  @each $cname, $color in $c-map {
+    $color-list: (
+      base: $color,
+    );
+
+    @each $vname, $variation in $v-map {
+      @if $vname == lighten {
+        $color-list: map.merge(
+          $color-list,
+          (
+            light: color.scale($color, $lightness: $variation),
+          )
+        );
+      } @else if $vname == darken {
+        $color-list: map.merge(
+          $color-list,
+          (
+            dark: color.scale($color, $lightness: $variation),
+          )
+        );
+      } @else if $vname == alpha {
+        $color-list: map.merge(
+          $color-list,
+          (
+            alpha: color.adjust($color, $alpha: $variation),
+          )
+        );
+      }
+    }
+
+    $baselist: map.merge($baselist, (#{$cname}: $color-list));
+  }
+
+  @return $baselist;
+}
+
+$clist: vlist($colors, $variations);
+
+@function clr($base, $shade: base) {
+  $color: map.get(map.get($clist, #{'' + $base}), $shade);
+
+  @return $color;
+}

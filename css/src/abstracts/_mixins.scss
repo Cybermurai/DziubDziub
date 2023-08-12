@@ -1,0 +1,42 @@
+@use 'sass:math';
+
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media (width <= 760px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (width <= 1200px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (width <= 1400px) {
+      @content;
+    }
+  }
+}
+
+@mixin animation-opacity() {
+  transition: opacity 0.2s ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.6;
+  }
+}
+
+$doc-font-size: 16;
+$doc-line-height: 24;
+
+@mixin font-size($size, $line-height: $doc-line-height) {
+  font-size: 0 + math.div($size, 10);
+
+  @if $line-height != $doc-line-height and $line-height != 1 {
+    line-height: math.div($size, $line-height) * math.div($line-height, $size);
+  } @else if $line-height == 1 {
+    line-height: 1;
+  } @else {
+    line-height: math.div(math.ceil($size), math.ceil($doc-line-height)) * math.div($doc-line-height, $size);
+  }
+}

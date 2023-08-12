@@ -1,0 +1,28 @@
+@use 'sass:map';
+
+:root {
+  --font-primary: 'Arial';
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.5;
+
+
+  @each $name, $color in $colors {
+    --clr-#{"" + $name}: #{$color};
+  }
+
+  @each $name, $size in $container-padding {
+    $c-size: map.get($mq-breakpoints, $name);
+
+    @include min($c-size) {
+      --container-padding: #{$size};
+    }
+  }
+
+  @each $name, $size in $container-max-width {
+    $c-size: map.get($mq-breakpoints, $name);
+
+    @include min($c-size) {
+      --container-max-width: #{$size};
+    }
+  }
+}

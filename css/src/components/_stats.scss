@@ -1,5 +1,6 @@
+/* stylelint-disable no-descending-specificity */
 .stats{
-  background-color:#000;
+  background-color:clr(black);
 
   &__header{
     display:flex;

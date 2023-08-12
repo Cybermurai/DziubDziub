@@ -1,0 +1,75 @@
+a {
+  color: clr(primary100);
+  font-weight: 400;
+  text-decoration: none;
+
+  &:hover {
+    color: clr(primary100);
+    text-decoration: underline;
+  }
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0 0 1.2rem;
+  color: clr(gray100);
+  font-weight: 700;
+
+  &:only-child {
+    margin: 0;
+  }
+}
+
+h1,
+.h1 {
+  @include font-size(24, 36);
+
+  @include min(md) {
+    @include font-size(32, 48);
+  }
+}
+
+h2,
+.h2 {
+  @include font-size(20, 30);
+
+  @include min(md) {
+    @include font-size(24, 36);
+  }
+}
+
+h3,
+.h3 {
+  @include font-size(20, 32);
+}
+
+h4,
+.h4 {
+  @include font-size(18, 24);
+}
+
+input,
+select,
+option,
+textarea,
+label {
+  font-weight: 400;
+}
